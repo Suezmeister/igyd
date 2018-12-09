@@ -5,9 +5,24 @@
 @endsection
 @section('content')
     <div class="container home">
-        <div class="row justify-content-center">
-            <div class="col-md-8">
+
+        <div class="row">
+            <div class="col-md-6">
+                    <img src="/img/shops/cp/cp_bg.jpg" class="shop" />
+            </div>
+            <div class="col-md-6">
+                    <img src="/img/shops/dd/dd_bg.jpg" class="shop" />
             </div>
         </div>
+
+        <div class="row">
+            <div class="col-md-6">
+                    <img src="/img/shops/jco/jco_bg.jpg" class="shop" />
+            </div>
+            <div class="col-md-6">
+                    <img src="/img/shops/sb/sb_bg.jpg" class="shop" />
+            </div>
+        </div>
+            
     </div>
 @endsection

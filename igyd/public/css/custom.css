@@ -39,5 +39,12 @@ body {
 .container.home {
     background-color: #FFF1D7;
     min-height: 880px;
-    opacity: 0.8;
+    background: rgba(255, 241, 215, 0.8);
+}
+
+.shop {
+    border: 10px greenyellow;
+    margin-top: 25px;
+    height: 380px;
+    width: 540px;
 }
