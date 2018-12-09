@@ -1,6 +1,7 @@
 body {
     background-image: url("../img/login_background.jpg");
     background-size: cover;
+    background-attachment: fixed;
 }
 
 .card {
@@ -33,4 +34,10 @@ body {
 
 .my-subtitle {
     text-align: center;
+}
+
+.container.home {
+    background-color: #FFF1D7;
+    min-height: 880px;
+    opacity: 0.8;
 }

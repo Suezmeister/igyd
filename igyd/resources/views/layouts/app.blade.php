@@ -9,7 +9,10 @@
         <title>I Got Your Drink</title>
     </head>
     <body>
+        
+        @yield('navbar')
         @yield('content')
+
         <script src="{{ asset('js/app.js') }}"></script>
     </body>
 </html>
