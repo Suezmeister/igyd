@@ -4,36 +4,44 @@ body {
     background-attachment: fixed;
 }
 
-.card {
-    top: 250px;
-    height: 400px;
+.container {
+    flex-wrap: wrap;
+    height: 100vh;
+}
+
+.centerpiece {
+    border: black 2px;
+    border-style: solid;
+    border-color: rgb(126, 93, 22);
+    border-radius: 15px;
     background-color: #FFF1D7;
+    padding-top:2rem;
+    padding-bottom:1rem;
 }
 
-.login {
-    height: 190px;
-    width: 200px;
-    background-image: url("../img/signin.png");
-    background-repeat: no-repeat;
-    background-size: cover;
+.title {
+    font-size: 2rem;
 }
 
-.register {
-    height: 190px;
-    width: 190px;
-    background-image: url("../img/register.png");
-    background-repeat: no-repeat;
-    background-size: cover;
+.subtitle {
+    font-size: 1rem;
 }
 
-.my-title {
-    margin-top: 30px;
-    font-weight: bold;
-    text-align: center;
+.welcome-icons {
+    border: black 1px;
+    border-style: solid;
 }
 
-.my-subtitle {
-    text-align: center;
+.back {
+    border: black 2px;
+    border-style: solid;
+    border-color: rgb(126, 93, 22);
+    border-radius: 50%;
+}
+
+.card {
+    top: 8rem;
+    background-color: #FFF1D7;
 }
 
 .container.home {

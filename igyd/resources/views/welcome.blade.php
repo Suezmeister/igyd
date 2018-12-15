@@ -1,46 +1,38 @@
 @extends('layouts.app')
 
 @section('content')
-<div class="container">
-    <div class="offset-md-2 col-md-8 ">
-        <div class="card">
-            <div class="row">
-                <div class="col-md-12">
-                    <h1 class="my-title">
-                        I Got Your Drink
-                    </h1>
+
+<div class="container d-flex">
+    <div class="row justify-content-center" style="flex:1 100%;">
+        <div class="col-9 align-self-center centerpiece">
+            <div class="row justify-content-center">
+                <h1 class="text-center title">I Got Your Drink</h1>
+            </div>
+            <div class="row justify-content-center" style="margin-bottom:2rem">
+                <h6 class="text-center subtitle">Already have an account?</h6>
+            </div>
+            <div class="row justify-content-around">
+                <div class="col-4">
+                    <a href="/register">
+                        <img src="{{asset('img/register.png')}}" class="img-fluid welcome-icons" />
+                    </a>
+                </div>
+                <div class="col-4">
+                    <a href="/login">
+                        <img src="{{asset('img/signin.png')}}" class="img-fluid welcome-icons" />
+                    </a>
                 </div>
             </div>
-            <div class="row">
-                <div class="col-md-12">
-                    <h3 class="my-subtitle">
-                        Already Have an Account?
-                    </h3>
+            <div class="row justify-content-around">
+                <div class="col-5 text-center">
+                    <p><b>Register</b></p>
                 </div>
-            </div>
-            <div class="row">
-                <div class="offset-md-2 col-md-3 offset-sm-1 col-sm-4 col-xs-12">
-                    <div class="row">
-                        <a href="/register" class="btn register"></a>
-                    </div>
-                    <div class="row">
-                        <div class="col-md-11">
-                            <h4 class="my-subtitle">Register</h4>
-                        </div>
-                    </div>
-                </div>
-                <div class="offset-md-1 col-md-4 offset-sm-1 col-sm-4 col-xs-12">
-                    <div class="row">
-                        <a href="/login" class="btn login"></a>
-                    </div>
-                    <div class="row">
-                        <div class="offset-md-4">
-                            <h4 class="my-subtitle">Sign In</h4>
-                        </div>
-                    </div>
+                <div class="col-5 text-center">
+                    <p><b>Sign In</b></p>
                 </div>
             </div>
         </div>
     </div>
 </div>
+
 @endsection

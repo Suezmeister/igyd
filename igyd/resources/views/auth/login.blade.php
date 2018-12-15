@@ -5,7 +5,17 @@
     <div class="row justify-content-center">
         <div class="col-md-8">
             <div class="card my-vertical">
-                <div class="card-header">{{ __('Login') }}</div>
+                <div class="card-header">
+                        <div class="row">
+                            <div class="col-2 col-sm-1">
+                                <a href="/">
+                                    <img src="{{asset('img/back.png')}}" class="img-fluid" />
+                                </a>
+                            </div>
+                            <div class="col">
+                                {{ __('Login') }}
+                            </div>
+                        </div></div>
 
                 <div class="card-body">
                     <form method="POST" action="{{ route('login') }}">
