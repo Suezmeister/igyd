@@ -9,10 +9,12 @@
 
     <div class="col-12 container" style="height: 350px;">
         <ul class="list-unstyled row">
-            @foreach ($shops as $shop) 
-                <li class="col-md-6 py-2">
-                        <img src="{{ $shop->img_src }}" alt="yourmom" class="img-fluid">
-                </li>
+            @foreach ($shops as $shop)
+            <li class="col-md-6 py-2">
+                <a href="/drinks/{{$shop->id}}">
+                    <img src="{{ $shop->img_src }}" alt="yourmom" class="img-fluid">
+                </a>
+            </li>
             @endforeach
         </ul>
     </div>

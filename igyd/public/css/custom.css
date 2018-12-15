@@ -37,9 +37,6 @@ body {
     border-style: solid;
 }
 
-.back {
-    border: black 2px;
-    border-style: solid;
 .card {
     top: 8rem;
     background-color: #FFF1D7;
@@ -53,4 +50,12 @@ nav {
 .navbar-brand {
     color: black;
     font-size:1.15rem;
+}
+
+.lead {
+    font-size: 1rem !important;
+}
+
+.item {
+    background-color: white;
 }
