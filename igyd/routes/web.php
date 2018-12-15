@@ -11,12 +11,11 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/', 'HomeController@welcome')->name('welcome')->middleware('guest');
 
 Auth::routes();
 Route::get('logout', '\App\Http\Controllers\Auth\LoginController@logout');
 
-Route::get('/home', 'HomeController@index')->name('home');
-Route::get('/drinks/{shop_id}', 'DrinkController@index')->name('drinks');
+Route::get('/shops', 'ShopController@index')->name('shops');
+Route::get('/shop/{shop_id}', 'ShopController@show')->name('shop');
+Route::get('/shop/{shop_id}/drink/{drink_id}', 'DrinkController@index')->name('drinks');

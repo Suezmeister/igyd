@@ -12,10 +12,14 @@ class DrinkTableSeeder extends Seeder
     public function run()
     {
         $drinks = $this->getDrinks();
+        $prices = [150,155,160,170,180,200,210,225,250];
+
+
         foreach ($drinks as $drink) {
             factory(App\Drink::class)->create([
                 'name' => $drink['name'],
                 'img_src' => $drink['img_src'],
+                'price' => $prices[array_rand($prices)],
                 'shop_id' => $drink['shop_id']
             ]);
         }

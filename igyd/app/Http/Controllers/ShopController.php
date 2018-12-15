@@ -27,4 +27,17 @@ class ShopController extends Controller
         $shops = Shop::all();
         return view('shops')->with('shops', $shops);
     }
+    
+    public function show($shop_id)
+    {
+        $drinks = Shop::find($shop_id)->drinks;
+        $shop = Shop::find($shop_id);
+
+        $data = array(
+            'drinks' => $drinks,
+            'shop' => $shop
+        );
+        
+        return view('drinks')->with('data', $data);
+    }
 }

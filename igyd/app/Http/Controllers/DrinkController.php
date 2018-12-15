@@ -6,6 +6,8 @@ use Illuminate\Http\Request;
 
 use App\Shop;
 use App\Drink;
+use App\User;
+use Auth;
 
 class DrinkController extends Controller
 {
@@ -19,17 +21,18 @@ class DrinkController extends Controller
         $this->middleware('auth');
     }
 
-    public function index($shop_id)
+    public function index($shop_id, $drink_id)
     {
-        $drinks = Shop::find($shop_id)->drinks;
-        $shop = Shop::find($shop_id);
+
+        $users = User::where('id', '!=', Auth::id())->get();
+        $drink = Drink::find($drink_id);
 
         $data = array(
-            'drinks' => $drinks,
-            'shop' => $shop
+            'users' => $users,
+            'drink' => $drink
         );
         
-        return view('drinks')->with('data', $data);
+        return view('order')->with('data', $data);
     }
 
     /**

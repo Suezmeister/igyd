@@ -17,6 +17,7 @@ class CreateDrinksTable extends Migration
             $table->increments('id');
             $table->string('name');
             $table->string('img_src');
+            $table->double('price', 8, 2);
             $table->integer('shop_id')->unsigned();
             $table->timestamps();
 
