@@ -25,6 +25,6 @@ class HomeController extends Controller
     public function index()
     {
         $shops = Shop::all();
-        return view('home')->with('shops', $shops);
+        return view('shops')->with('shops', $shops);
     }
 }

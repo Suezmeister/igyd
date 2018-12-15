@@ -5,8 +5,13 @@ body {
 }
 
 .container {
-    flex-wrap: wrap;
-    height: 100vh;
+    min-height: 100vh;
+}
+
+.container.home {
+    background-color: #FFF1D7;
+    min-height: 161vh;
+    background: rgba(255, 241, 215, 0.8);
 }
 
 .centerpiece {
@@ -35,24 +40,17 @@ body {
 .back {
     border: black 2px;
     border-style: solid;
-    border-color: rgb(126, 93, 22);
-    border-radius: 50%;
-}
-
 .card {
     top: 8rem;
     background-color: #FFF1D7;
 }
 
-.container.home {
-    background-color: #FFF1D7;
-    min-height: 880px;
-    background: rgba(255, 241, 215, 0.8);
+nav {
+    background-color: rgb(255, 233, 194);
+    height: 4rem;
 }
 
-.shop {
-    border: 10px greenyellow;
-    margin-top: 25px;
-    height: 380px;
-    width: 540px;
+.navbar-brand {
+    color: black;
+    font-size:1.15rem;
 }
