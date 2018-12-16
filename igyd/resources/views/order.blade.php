@@ -15,13 +15,13 @@
                 <img src="{{ $data['drink']->img_src }}" alt="yourmom" class="img-fluid item">
                 <p class="lead text-center"><b>{{$data['drink']->name}}</b></p>
                 <div class="row justify-content-around">
-                    <div class="col-3">
-                        <img src="{{asset('img/small.png')}}" class="img-fluid size-s" />
+                    <div class="col-3 align-self-center">
+                        <img src="{{asset('img/small.png')}}" class="img-fluid size-s" style="width:75%;height:80%"/>
                     </div>
-                    <div class="col-3">
-                        <img src="{{asset('img/medium.png')}}" class="img-fluid size-m" />
+                    <div class="col-3 align-self-center">
+                        <img src="{{asset('img/medium.png')}}" class="img-fluid size-m" style="width:85%;height:85%"/>
                     </div>
-                    <div class="col-3">
+                    <div class="col-3 align-self-center">
                         <img src="{{asset('img/large.png')}}" class="img-fluid size-l" />
                     </div>
                 </div>
@@ -29,7 +29,7 @@
             <div class="col-md-7">
 
                 {{ Form::open(array('url' => 'order')) }}
-                <ul class="list-group">
+                <ul class="list-group" id="friends">
                     <li class="list-group-item" value="{{Auth::user()->id}}">Mine ({{Auth::user()->name}})</li>
                     @foreach ($data['users'] as $user)
                     <li class="list-group-item" value="{{$user->id}}">{{$user->name}}</li>
@@ -42,7 +42,7 @@
                 </div>
             </div>
             <input type="hidden" name="drink_id" value="{{$data['drink']->id}}"/>
-            <input type="hidden" name="receiver" />
+            <input type="hidden" name="receiver_id" />
             <input type="hidden" name="size" />
             {{ Form::close() }}
         </div>

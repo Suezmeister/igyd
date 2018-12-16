@@ -1,13 +1,12 @@
-
 $( document ).ready(function() {
     $('.size-s').css({
         "border-radius" : "50%",
         "background-color" : "aquamarine"
     });
-    $('ul li:first-child').css({
+    $('#friends li:first-child').css({
         "background-color" : "aquamarine"
     });
-    $('input[name="receiver"]').val($('ul li:first-child').val());
+    $('input[name="receiver_id"]').val($('#friends li:first-child').val());
     $('input[name=size]').val('S')
 });
 

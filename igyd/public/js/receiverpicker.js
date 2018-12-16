@@ -5,5 +5,5 @@ $('.list-group-item').click(function () {
     $('.list-group-item').not(this).css({
         "background-color" : "azure"
     });;
-    $('input[name="receiver"]').val($(this).val());
+    $('input[name="receiver_id"]').val($(this).val());
 });

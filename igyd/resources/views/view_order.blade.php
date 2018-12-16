@@ -5,7 +5,9 @@
 
     <h5 class="text-center" style="padding-top:1rem">Hello {{ Auth::user()->name }},</h5>
     <div class="w-100"></div>
-    <h5 class="text-center"> Please confirm your order</h5>
+    <h5 class="text-center">
+        This was your order!
+    </h5>
 
     <div class="col-12 container" style="top:1rem">
         <div class="row">
@@ -23,8 +25,7 @@
                         <img src="{{asset('img/large.png')}}" class="img-fluid size-l" />
                     </div>
                 </div>
-            </div>
-            <div class="col-md"></div>
+            </div><div class="col-md"></div>
             <div class="col-md-4 receipt">
                 <hr />
                 <h6 class="text-center" style="margin:.25rem">RECEIPT</h6>
@@ -59,21 +60,5 @@
             </div>
             <div class="col-md"></div>
         </div>
-        {{ Form::open(array('url' => 'confirm_order')) }}
-        <div class="row" style="margin-top:2rem">
-            <div class="col-md-2 col-2 offset-md-2">
-                <a href="{{ url()->previous() }}">
-                    <div class="btn btn-warning"><b>Previous</b></div>
-                </a>
-            </div>
-            <div class="col-md-2 col-2 offset-4">
-                <input type="submit" value="Confirm Order" class="btn btn-success" style="font-weight:bold">
-            </div>
-        </div>
-        <input type="hidden" name="drink_id" value="{{$data['drink']->id}}" />
-        <input type="hidden" name="receiver" value="{{$data['receiver']->id}}" />
-        <input type="hidden" name="size" value="{{$data['size']}}" />
-        {{ Form::close() }}
     </div>
-</div>
-@endsection
+    @endsection

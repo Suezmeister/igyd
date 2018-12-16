@@ -21,3 +21,4 @@ Route::get('/shop/{shop_id}', 'ShopController@show')->name('shop');
 Route::get('/shop/{shop_id}/drink/{drink_id}', 'DrinkController@index')->name('drinks');
 
 Route::post('/order', 'OrderController@summary')->name('order');
+Route::post('/confirm_order', 'OrderController@store')->name('confirm_order');
