@@ -16,25 +16,35 @@
                 <p class="lead text-center"><b>{{$data['drink']->name}}</b></p>
                 <div class="row justify-content-around">
                     <div class="col-3">
-                        <img src="{{asset('img/small.png')}}" class="img-fluid" />
+                        <img src="{{asset('img/small.png')}}" class="img-fluid size-s" />
                     </div>
                     <div class="col-3">
-                        <img src="{{asset('img/medium.png')}}" class="img-fluid" />
+                        <img src="{{asset('img/medium.png')}}" class="img-fluid size-m" />
                     </div>
                     <div class="col-3">
-                        <img src="{{asset('img/large.png')}}" class="img-fluid" />
+                        <img src="{{asset('img/large.png')}}" class="img-fluid size-l" />
                     </div>
                 </div>
             </div>
             <div class="col-md-7">
+
+                {{ Form::open(array('url' => 'order')) }}
                 <ul class="list-group">
-                    <li class="list-group-item">Mine</li>
-                    <li class="list-group-item">Dapibus ac facilisis in</li>
-                    <li class="list-group-item">Morbi leo risus</li>
-                    <li class="list-group-item">Porta ac consectetur ac</li>
-                    <li class="list-group-item">Vestibulum at eros</li>
+                    <li class="list-group-item" value="{{Auth::user()->id}}">Mine ({{Auth::user()->name}})</li>
+                    @foreach ($data['users'] as $user)
+                    <li class="list-group-item" value="{{$user->id}}">{{$user->name}}</li>
+                    @endforeach
                 </ul>
+                <div class="row justify-content-center">
+                    <div class="col-5">
+                        <input type="submit" class="my-submit" value="Order Now"/>
+                    </div>
+                </div>
             </div>
+            <input type="hidden" name="drink_id" value="{{$data['drink']->id}}"/>
+            <input type="hidden" name="receiver" />
+            <input type="hidden" name="size" />
+            {{ Form::close() }}
         </div>
     </div>
 </div>

@@ -3,12 +3,28 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Drink;
+use App\User;
+use App\Order;
 
 class OrderController extends Controller
 {
-    public function index($shop_id, $drink_id)
+    public function summary(Request $request)
     {
-        $shops = Shop::all();
-        return view('shops')->with('shops', $shops);
+        $drink = Drink::find($request->drink_id);
+        $shop = $drink->shop()->first();
+        $receiver = User::find($request->receiver);
+        $size = $request->size;
+        $date = date('m-d-Y');
+
+        $data = array(
+            'drink' => $drink,
+            'shop' => $shop,
+            'receiver' => $receiver,
+            'size' => $size,
+            'date' => $date
+        );
+
+        return view('summary')->with('data', $data);
     }
 }

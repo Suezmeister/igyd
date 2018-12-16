@@ -59,3 +59,50 @@ nav {
 .item {
     background-color: white;
 }
+
+.size-active {
+    border-radius: 50%;
+    background-color: aquamarine;
+}
+
+.list-group-item {
+    background-color: azure;
+}
+
+.my-submit {
+    margin-top:.8rem;
+    height: 100%;
+    width: 100%;
+    border-radius: 15px;
+    border-color: white;
+    background-color: #eeb578;
+    font-weight: bolder;
+    color: whitesmoke;
+}
+
+.my-submit:hover {
+    margin-top:.8rem;
+    height: 100%;
+    width: 100%;
+    border-radius: 15px;
+    border-color: white;
+    background-color: #e6943e;
+    font-weight: bolder;
+    color: whitesmoke;
+}
+
+.receipt {
+    background-color: white;
+    font-family: "Courier New", times, serif;
+}
+
+hr {
+    border: none;
+    height: 1px;
+    margin-top:1rem;
+    margin-bottom:0;
+
+    /* Set the hr color */
+    color: #333; /* old IE */
+    background-color: #333; /* Modern Browsers */
+}

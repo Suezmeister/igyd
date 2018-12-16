@@ -24,7 +24,7 @@ class DrinkController extends Controller
     public function index($shop_id, $drink_id)
     {
 
-        $users = User::where('id', '!=', Auth::id())->get();
+        $users = User::where('id', '!=', Auth::id())->orderBy('name')->get();
         $drink = Drink::find($drink_id);
 
         $data = array(

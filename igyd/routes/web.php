@@ -19,3 +19,5 @@ Route::get('logout', '\App\Http\Controllers\Auth\LoginController@logout');
 Route::get('/shops', 'ShopController@index')->name('shops');
 Route::get('/shop/{shop_id}', 'ShopController@show')->name('shop');
 Route::get('/shop/{shop_id}/drink/{drink_id}', 'DrinkController@index')->name('drinks');
+
+Route::post('/order', 'OrderController@summary')->name('order');
