@@ -59,6 +59,18 @@
             </div>
             <div class="col-md"></div>
         </div>
+        {{ Form::open(array('url' => 'order')) }}
+        <div class="row" style="margin-top:2rem">
+            <div class="col-md-2 col-2 offset-md-2">
+                <a href="{{ url()->previous() }}">
+                    <div class="btn btn-warning"><b>Previous</b></div>
+                </a>
+            </div>
+            <div class="col-md-2 col-2 offset-4">
+                <input type="submit" value="Confirm Order" class="btn btn-success" style="font-weight:bold">
+            </div>
+        </div>
+        {{ Form::close() }}
     </div>
 </div>
 @endsection
