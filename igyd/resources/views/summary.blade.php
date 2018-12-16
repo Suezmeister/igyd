@@ -14,13 +14,13 @@
                 <p class="lead text-center"><b>{{$data['drink']->name}}</b></p>
                 <div class="row justify-content-around">
                     <div class="col-3 align-self-center">
-                        <img src="{{asset('img/small.png')}}" class="img-fluid size-s" style="width:75%;height:80%" />
+                        <img src="{{asset('img/small.png')}}" id="ss" class="img-fluid size-s" style="width:75%;height:75%" />
                     </div>
                     <div class="col-3 align-self-center">
-                        <img src="{{asset('img/medium.png')}}" class="img-fluid size-m" style="width:85%;height:85%" />
+                        <img src="{{asset('img/medium.png')}}" id="sm" class="img-fluid size-m" style="width:85%;height:85%" />
                     </div>
                     <div class="col-3 align-self-center">
-                        <img src="{{asset('img/large.png')}}" class="img-fluid size-l" />
+                        <img src="{{asset('img/large.png')}}" id="sl" class="img-fluid size-l" />
                     </div>
                 </div>
             </div>
@@ -71,8 +71,8 @@
             </div>
         </div>
         <input type="hidden" name="drink_id" value="{{$data['drink']->id}}" />
+        <input type="hidden" name="size" value="{{$data['size']}}" id="summary_size" />
         <input type="hidden" name="receiver" value="{{$data['receiver']->id}}" />
-        <input type="hidden" name="size" value="{{$data['size']}}" />
         {{ Form::close() }}
     </div>
 </div>

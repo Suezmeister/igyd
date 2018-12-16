@@ -14,15 +14,15 @@
             <div class="col-md-5" style="margin-bottom:1rem">
                 <img src="{{ $data['drink']->img_src }}" alt="yourmom" class="img-fluid item">
                 <p class="lead text-center"><b>{{$data['drink']->name}}</b></p>
-                <div class="row justify-content-around">
+                <div class="row justify-content-around" id="sizes">
                     <div class="col-3 align-self-center">
-                        <img src="{{asset('img/small.png')}}" class="img-fluid size-s" style="width:75%;height:80%"/>
+                        <img src="{{asset('img/small.png')}}" id="s" class="img-fluid size-s" style="width:75%;height:80%"/>
                     </div>
                     <div class="col-3 align-self-center">
-                        <img src="{{asset('img/medium.png')}}" class="img-fluid size-m" style="width:85%;height:85%"/>
+                        <img src="{{asset('img/medium.png')}}" id="m" class="img-fluid size-m" style="width:85%;height:85%"/>
                     </div>
                     <div class="col-3 align-self-center">
-                        <img src="{{asset('img/large.png')}}" class="img-fluid size-l" />
+                        <img src="{{asset('img/large.png')}}" id="l" class="img-fluid size-l" />
                     </div>
                 </div>
             </div>
@@ -43,7 +43,7 @@
             </div>
             <input type="hidden" name="drink_id" value="{{$data['drink']->id}}"/>
             <input type="hidden" name="receiver_id" />
-            <input type="hidden" name="size" />
+            <input type="hidden" name="size" id="order_size"/>
             {{ Form::close() }}
         </div>
     </div>

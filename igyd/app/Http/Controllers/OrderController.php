@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Drink;
 use App\User;
 use App\Order;
+use Auth;
 
 class OrderController extends Controller
 {
@@ -15,8 +16,8 @@ class OrderController extends Controller
         $shop = $drink->shop()->first();
         $receiver = User::find($request->receiver_id);
         $size = $request->size;
-        $date = date('m-d-Y');
-
+        $date = date('m/d/Y h:i:s');
+        
         $data = array(
             'drink' => $drink,
             'shop' => $shop,
@@ -33,16 +34,15 @@ class OrderController extends Controller
         $shop = $drink->shop()->first();
         $receiver = User::find($request->receiver);
         $size = $request->size;
-        $date = date('m-d-Y');
 
-        $data = array(
-            'drink' => $drink,
-            'shop' => $shop,
-            'receiver' => $receiver,
-            'size' => $size,
-            'date' => $date
-        );
+        $order = new Order;
+        $order->size = $request->size;
+        $order->drink_id = $request->drink_id;
+        $order->payer_id = Auth::user()->id;
+        $order->receiver_id = $request->receiver;
+        $order->save();
+
         
-        return view('view_order')->with('data', $data);
+        return view('view_order')->with('order', $order);
     }
 }

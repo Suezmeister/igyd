@@ -1,53 +1,68 @@
-$( document ).ready(function() {
-    $('.size-s').css({
+$('#sizes').ready(function() {
+    $('#s').css({
         "border-radius" : "50%",
         "background-color" : "aquamarine"
     });
-    $('#friends li:first-child').css({
-        "background-color" : "aquamarine"
-    });
-    $('input[name="receiver_id"]').val($('#friends li:first-child').val());
-    $('input[name=size]').val('S')
+    $('#order_size').val('S')
 });
 
-$('.size-s').click(function () {
+$('#summary_size').ready(function() {
+    if($('#summary_size').val()=="S"){
+        $('#ss').css({
+            "border-radius" : "50%",
+            "background-color" : "aquamarine"
+        });
+    }else if($('#summary_size').val()=="M"){
+        $('#sm').css({
+            "border-radius" : "50%",
+            "background-color" : "aquamarine"
+        });
+    }else if($('#summary_size').val()=="L"){
+        $('#sl').css({
+            "border-radius" : "50%",
+            "background-color" : "aquamarine"
+        });
+    }
+});
+
+$('#s').click(function () {
     $(this).css({
         "border-radius" : "50%",
         "background-color" : "aquamarine"
     });
-    $('.size-m').css({
+    $('#m').css({
         "background-color" : "transparent"
     });
-    $('.size-l').css({
+    $('#l').css({
         "background-color" : "transparent"
     });
-    $('input[name=size]').val('S')
+    $('#order_size').val('S')
 });
 
-$('.size-m').click(function () {
-    $('.size-s').css({
+$('#m').click(function () {
+    $('#s').css({
         "background-color" : "transparent"
     });
     $(this).css({
         "border-radius" : "50%",
         "background-color" : "aquamarine"
     });
-    $('.size-l').css({
+    $('#l').css({
         "background-color" : "transparent"
     });
-    $('input[name=size]').val('M')
+    $('#order_size').val('M')
 });
 
-$('.size-l').click(function () {
-    $('.size-s').css({
+$('#l').click(function () {
+    $('#s').css({
         "background-color" : "transparent"
     });
-    $('.size-m').css({
+    $('#m').css({
         "background-color" : "transparent"
     });
     $(this).css({
         "border-radius" : "50%",
         "background-color" : "aquamarine"
     });
-    $('input[name=size]').val('L')
+    $('#order_size').val('L')
 });

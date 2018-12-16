@@ -17,12 +17,12 @@ class CreateOrdersTable extends Migration
             $table->increments('id');
             $table->string('size');
             $table->boolean('received')->default(false);
-            $table->integer('drinks_id')->unsigned();
+            $table->integer('drink_id')->unsigned();
             $table->integer('payer_id')->unsigned();
             $table->integer('receiver_id')->unsigned();
             $table->timestamps();
 
-            $table->foreign('drinks_id')->references('id')->on('drinks');
+            $table->foreign('drink_id')->references('id')->on('drinks');
             $table->foreign('payer_id')->references('id')->on('users');
             $table->foreign('receiver_id')->references('id')->on('users');
         });
