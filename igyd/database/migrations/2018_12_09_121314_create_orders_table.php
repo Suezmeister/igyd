@@ -17,6 +17,8 @@ class CreateOrdersTable extends Migration
             $table->increments('id');
             $table->string('size');
             $table->boolean('received')->default(false);
+            $table->double('credits_before_transaction',8,2);
+            $table->double('credits_after_transaction',8,2);
             $table->integer('drink_id')->unsigned();
             $table->integer('payer_id')->unsigned();
             $table->integer('receiver_id')->unsigned();

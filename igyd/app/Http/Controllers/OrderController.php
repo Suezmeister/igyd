@@ -10,6 +10,12 @@ use Auth;
 
 class OrderController extends Controller
 {
+
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
+
     public function summary(Request $request)
     {
         $drink = Drink::find($request->drink_id);
@@ -17,7 +23,7 @@ class OrderController extends Controller
         $receiver = User::find($request->receiver_id);
         $size = $request->size;
         $date = date('m/d/Y h:i:s');
-        
+
         $data = array(
             'drink' => $drink,
             'shop' => $shop,
@@ -39,6 +45,8 @@ class OrderController extends Controller
         $order->size = $request->size;
         $order->drink_id = $request->drink_id;
         $order->payer_id = Auth::user()->id;
+        $order->credits_before_transaction = Auth::user()->credit;
+        $order->credits_after_transaction = Auth::user()->credit - $drink->price;
         $order->receiver_id = $request->receiver;
         $order->save();
 

@@ -10,7 +10,7 @@ body {
 
 .container.home {
     background-color: #FFF1D7;
-    min-height: 164vh;
+    min-height: 180vh;
     background: rgba(255, 241, 215, 0.8);
 }
 
@@ -52,11 +52,18 @@ nav {
     font-size:1.15rem;
 }
 
-.logout {
-    height: 3rem;
-    width: 3rem;
-    border-radius: 50%;
-    background-color: plum;
+.home-item {
+    border-style: solid;
+    border-color: rgb(197, 165, 105);
+    background-color: cornsilk;
+    margin-top:1rem;
+}
+
+.home-img {
+    height: 20rem;
+    width: 100%;
+    margin: 0;
+    border-radius: 5%
 }
 
 .lead {
@@ -112,4 +119,8 @@ hr {
     /* Set the hr color */
     color: #333; /* old IE */
     background-color: #333; /* Modern Browsers */
+}
+
+hr.receipt_item {
+    margin-top:0;
 }

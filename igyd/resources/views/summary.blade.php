@@ -41,6 +41,12 @@
                 </div>
 
                 <div class="row content-justify-center" style="margin-top:4rem">
+                    <div class="col-9">Remaining Credits</div>
+                    <div class="col-1">₱{{Auth::user()->credit}}</div>
+                </div>
+                <hr class="receipt_item">
+
+                <div class="row content-justify-center">
                     @if($data['size']=='M')
                     <div class="col-9">{{$data['drink']->name}} (M)</div>
                     <div class="col-1">₱{{$data['drink']->price + 15}}</div>
@@ -53,6 +59,11 @@
                     @endif
                 </div>
                 <hr>
+                
+                <div class="row content-justify-center">
+                        <div class="col-9">Credits after transaction</div>
+                        <div class="col-1">₱{{Auth::user()->credit - $data['drink']->price}}</div>
+                    </div>
 
                 <hr style="margin-top:4rem; margin-bottom:.1rem" />
                 <p class="lead text-center"><b>{{$data['date']}}</b></p>
@@ -62,7 +73,7 @@
         {{ Form::open(array('url' => 'confirm_order')) }}
         <div class="row" style="margin-top:2rem">
             <div class="col-md-2 col-2 offset-md-2">
-                <a href="{{ url()->previous() }}">
+                <a href="/shop/{{ $data['shop']->id }}/drink/{{$data['drink']->id}}">
                     <div class="btn btn-warning"><b>Previous</b></div>
                 </a>
             </div>
@@ -71,8 +82,8 @@
             </div>
         </div>
         <input type="hidden" name="drink_id" value="{{$data['drink']->id}}" />
-        <input type="hidden" name="size" value="{{$data['size']}}" id="summary_size" />
         <input type="hidden" name="receiver" value="{{$data['receiver']->id}}" />
+        <input type="hidden" name="size" value="{{$data['size']}}" id="summary_size" />
         {{ Form::close() }}
     </div>
 </div>

@@ -10,11 +10,12 @@
 | contains the "web" middleware group. Now create something great!
 |
 */
-
-Route::get('/', 'HomeController@welcome')->name('welcome')->middleware('guest');
-
 Auth::routes();
 Route::get('logout', '\App\Http\Controllers\Auth\LoginController@logout');
+
+Route::get('/', 'HomeController@welcome')->name('welcome')->middleware('guest');
+Route::get('/home', 'HomeController@index')->name('home')->middleware('auth');
+
 
 Route::get('/shops', 'ShopController@index')->name('shops');
 Route::get('/shop/{shop_id}', 'ShopController@show')->name('shop');
