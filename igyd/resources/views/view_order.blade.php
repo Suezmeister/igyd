@@ -40,7 +40,7 @@
 
                 <div class="row" style="margin-top:2rem">
                     <div class="col-6">Paid By:</div>
-                    <div class="col">{{$order->payer($order->payer_id)->name}}</div>
+                    <div class="col">{{Auth::user()->name}}</div>
                 </div>
                 <div class="row">
                     <div class="col-6">Received By:</div>
@@ -48,6 +48,12 @@
                 </div>
 
                 <div class="row content-justify-center" style="margin-top:4rem">
+                    <div class="col-9">Remaining Credits</div>
+                    <div class="col-1">₱{{Auth::user()->credit}}</div>
+                </div>
+                <hr class="receipt_item">
+
+                <div class="row content-justify-center">
                     @if($order->size=='M')
                     <div class="col-9">{{$order->drink->name}} (M)</div>
                     <div class="col-1">₱{{$order->drink->price + 15}}</div>
@@ -60,6 +66,11 @@
                     @endif
                 </div>
                 <hr>
+                
+                <div class="row content-justify-center">
+                        <div class="col-9">Credits after transaction</div>
+                        <div class="col-1">₱{{ $order->credits_after_transaction}}</div>
+                    </div>
 
                 <hr style="margin-top:4rem; margin-bottom:.1rem" />
                 <p class="lead text-center"><b>{{$order->created_at}}</b></p>

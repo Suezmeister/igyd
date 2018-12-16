@@ -23,3 +23,5 @@ Route::get('/shop/{shop_id}/drink/{drink_id}', 'DrinkController@index')->name('d
 
 Route::post('/order', 'OrderController@summary')->name('order');
 Route::post('/confirm_order', 'OrderController@store')->name('confirm_order');
+Route::get('/receipts', 'OrderController@receipts')->name('receipts');
+Route::get('/receipts/{order_id}', 'OrderController@view_receipt')->name('view_receipt');

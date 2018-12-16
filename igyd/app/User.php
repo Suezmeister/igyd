@@ -10,8 +10,8 @@ class User extends Authenticatable
 {
     use Notifiable;
 
-    public function orders(){
-        return $this->hasMany(Order::class);
+    public function orders($id){
+        return $this->hasMany(Order::class)->where('payer_id',$id);
     }
 
     /**

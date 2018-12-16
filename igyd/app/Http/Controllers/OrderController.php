@@ -53,4 +53,22 @@ class OrderController extends Controller
         
         return view('view_order')->with('order', $order);
     }
+
+    public function receipts(){
+
+        $standing_orders = Order::where('payer_id',Auth::user()->id)->get();
+
+        $data = [
+            'standing_orders' => $standing_orders,
+        ];
+
+        return view('receipts')->with('data', $data);
+    }
+
+    public function view_receipt($receipt_id){
+
+        $order = Order::find($receipt_id);
+
+        return view('view_order')->with('order', $order);
+    }
 }

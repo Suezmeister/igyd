@@ -110,6 +110,14 @@ nav {
     font-family: "Courier New", times, serif;
 }
 
+.receipt-item {
+    height: 13rem;
+    width:100%;
+    background-color: white;
+    border-style: solid;
+    border-color: rgb(197, 165, 105);
+}
+
 hr {
     border: none;
     height: 1px;
