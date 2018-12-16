@@ -77,5 +77,12 @@
             </div>
             <div class="col-md"></div>
         </div>
+        <div class="row justify-content-center" style="margin-top:2rem">
+            <div class="col-5 col-md-2">
+                <a href="/receipts">
+                    <div class="btn btn-success"><b>Confirm</b></div>
+                </a>
+            </div>
+        </div>
     </div>
     @endsection

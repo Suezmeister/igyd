@@ -56,7 +56,7 @@ class OrderController extends Controller
 
     public function receipts(){
 
-        $standing_orders = Order::where('payer_id',Auth::user()->id)->get();
+        $standing_orders = Order::where('payer_id',Auth::user()->id)->orderBy('created_at')->get();
 
         $data = [
             'standing_orders' => $standing_orders,

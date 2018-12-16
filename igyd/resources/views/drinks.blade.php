@@ -22,6 +22,14 @@
             </li>
             @endforeach
         </ul>
+        
+        <div class="row justify-content-center" style="margin-top:2rem">
+                <div class="col-5 col-md-2">
+                    <a href="/shops">
+                        <div class="btn btn-warning"><b>Previous</b></div>
+                    </a>
+                </div>
+            </div>
     </div>
 </div>
 @endsection
