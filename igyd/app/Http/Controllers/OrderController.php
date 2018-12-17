@@ -46,9 +46,19 @@ class OrderController extends Controller
         $order->drink_id = $request->drink_id;
         $order->payer_id = Auth::user()->id;
         $order->credits_before_transaction = Auth::user()->credit;
-        $order->credits_after_transaction = Auth::user()->credit - $drink->price;
+        if($order->size == 'L'){
+            $order->credits_after_transaction = Auth::user()->credit - $drink->price - 25;
+        }else if($order->size == 'M'){
+            $order->credits_after_transaction = Auth::user()->credit - $drink->price - 15;
+        }else{
+            $order->credits_after_transaction = Auth::user()->credit - $drink->price;
+        }
         $order->receiver_id = $request->receiver;
         $order->save();
+
+        $payer = User::find(Auth::user()->id);
+        $payer->credit = $order->credits_after_transaction;
+        $payer->save();
 
         
         return view('view_order')->with('order', $order);

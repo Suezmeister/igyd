@@ -16,7 +16,8 @@ class UsersTableSeeder extends Seeder
         foreach($users as $user){
             factory(App\User::class)->create([
                 'name' => $user['name'],
-                'email' => $user['email']
+                'email' => $user['email'],
+                'credit' => 1000
             ]);
         }
     }

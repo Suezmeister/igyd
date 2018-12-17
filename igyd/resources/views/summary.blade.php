@@ -59,11 +59,19 @@
                     @endif
                 </div>
                 <hr>
-                
+
                 <div class="row content-justify-center">
-                        <div class="col-9">Credits after transaction</div>
-                        <div class="col-1">₱{{Auth::user()->credit - $data['drink']->price}}</div>
-                    </div>
+                    @if($data['size']=='M')
+                    <div class="col-9">Credits after transaction</div>
+                    <div class="col-1">₱{{Auth::user()->credit - $data['drink']->price -15}}</div>
+                    @elseif($data['size']=='L')
+                    <div class="col-9">Credits after transaction</div>
+                    <div class="col-1">₱{{Auth::user()->credit - $data['drink']->price -25}}</div>
+                    @else
+                    <div class="col-9">Credits after transaction</div>
+                    <div class="col-1">₱{{Auth::user()->credit - $data['drink']->price}}</div>
+                    @endif
+                </div>
 
                 <hr style="margin-top:4rem; margin-bottom:.1rem" />
                 <p class="lead text-center"><b>{{$data['date']}}</b></p>
